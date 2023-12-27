@@ -1,15 +1,15 @@
 import sys
 import random
 from PySide6.QtWidgets import QApplication, QMainWindow
-from ui_mainwindow import Ui_ui_mainwindow
-
+from mainwindow_ui import Ui_ui_mainwindow
+from functools import partial
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.ui = Ui_ui_mainwindow()
         self.ui.setupUi(self)
-        self.araye = []
+        self.araye = [] 
 
         self.buttons = [
             [self.ui.btn_1, self.ui.btn_2, self.ui.btn_3, self.ui.btn_4],
@@ -25,8 +25,17 @@ class MainWindow(QMainWindow):
                     r = random.randint(1, 16)
                 else:                
                     self.buttons[i][j].setText(str(r))
+                    self.buttons[i][j].clicked.connect(partial(self.play,i,j))
                     self.araye.append(r)
+                if r== 16:
+                    self.empty_i = i
+                    self.empty_j = j
+                    self.buttons[i][j].hide()
 
+    def play(self,i,j):
+        if (i == self.empty_i and (j== self.empty_j -1 or j == self.empty_j +1)) or (j== self.empty_j and (i== self.empty_i -1 or i== self.empty_i + 1)):
+            ...
+            
 
 app = QApplication(sys.argv)
 
