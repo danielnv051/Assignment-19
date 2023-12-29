@@ -16,14 +16,15 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QGridLayout, QLabel, QMainWindow,
-    QRadioButton, QSizePolicy, QTextEdit, QWidget)
+    QPushButton, QRadioButton, QSizePolicy, QTextEdit,
+    QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(440, 157)
-        MainWindow.setMaximumSize(QSize(440, 157))
+        MainWindow.resize(298, 196)
+        MainWindow.setMinimumSize(QSize(298, 196))
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.gridLayout = QGridLayout(self.centralwidget)
@@ -60,6 +61,7 @@ class Ui_MainWindow(object):
         self.radio_standard.setObjectName(u"radio_standard")
         self.radio_standard.setFont(font1)
         self.radio_standard.setLayoutDirection(Qt.RightToLeft)
+        self.radio_standard.setChecked(True)
 
         self.gridLayout.addWidget(self.radio_standard, 1, 2, 1, 1)
 
@@ -75,6 +77,16 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.password, 2, 0, 1, 3)
 
+        self.btn_generate = QPushButton(self.centralwidget)
+        self.btn_generate.setObjectName(u"btn_generate")
+        font3 = QFont()
+        font3.setFamilies([u"Yekan Bakh FaNum"])
+        font3.setPointSize(12)
+        font3.setBold(True)
+        self.btn_generate.setFont(font3)
+
+        self.gridLayout.addWidget(self.btn_generate, 3, 0, 1, 3)
+
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -88,5 +100,6 @@ class Ui_MainWindow(object):
         self.radio_super.setText(QCoreApplication.translate("MainWindow", u"\u062e\u06cc\u0644\u06cc \u067e\u06cc\u0686\u06cc\u062f\u0647", None))
         self.radio_strong.setText(QCoreApplication.translate("MainWindow", u"\u067e\u06cc\u0686\u06cc\u062f\u0647", None))
         self.radio_standard.setText(QCoreApplication.translate("MainWindow", u"\u0627\u0633\u062a\u0627\u0646\u062f\u0627\u0631\u062f", None))
+        self.btn_generate.setText(QCoreApplication.translate("MainWindow", u"\u0627\u06cc\u062c\u0627\u062f \u0631\u0645\u0632 \u0639\u0628\u0648\u0631", None))
     # retranslateUi
 
