@@ -6,8 +6,6 @@
 ## Password Generator
 ![Password Generator](password_generator/passwordgenerator.PNG)
 
-## Paper Rock Scissors
-![Paper Rock Scissors](paper_rock_scissors/paper_rock_scissors.PNG)
 
 ## Guess Number
 ![Guess Number](guess_number/guess.PNG)
