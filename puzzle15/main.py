@@ -4,7 +4,7 @@ import time
 import datetime
 from typing import Optional
 from PySide6.QtCore import Qt
-from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QWidget
+from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox
 from mainwindow_ui import Ui_ui_mainwindow
 from scoreboard_ui import Ui_MainWindow
 from functools import partial
@@ -109,7 +109,6 @@ class GamePlay(QMainWindow):
         self.ui.score.clicked.connect(self.show_score)
 
     def show_score(self):
-        score_board.add(1, "score")
         self.end = time.time()
         score_board.elapsed(str(int(self.end - self.start)))
         self.hide()
