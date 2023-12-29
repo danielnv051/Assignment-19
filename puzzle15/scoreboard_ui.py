@@ -134,6 +134,10 @@ class Ui_MainWindow(object):
         self.m3.setStyleSheet(u"color: rgb(255, 255, 255);\n"
 "background-color: transparent;")
         self.m3.setAlignment(Qt.AlignCenter)
+        self.elaps_time = QLabel(self.centralwidget)
+        self.elaps_time.setObjectName(u"elaps_time")
+        self.elaps_time.setGeometry(QRect(360, 70, 49, 16))
+        self.elaps_time.setStyleSheet(u"opacity:1;")
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -157,5 +161,6 @@ class Ui_MainWindow(object):
         self.m2.setText(QCoreApplication.translate("MainWindow", u"0", None))
         self.m4.setText(QCoreApplication.translate("MainWindow", u"0", None))
         self.m3.setText(QCoreApplication.translate("MainWindow", u"0", None))
+        self.elaps_time.setText("")
     # retranslateUi
 

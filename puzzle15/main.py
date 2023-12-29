@@ -1,6 +1,7 @@
 import sys
 import random
 import time
+import datetime
 from typing import Optional
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QWidget
@@ -14,7 +15,6 @@ class ScoreBoard(QMainWindow):
         super().__init__()
         self.scoreboard = Ui_MainWindow()
         self.scoreboard.setupUi(self)
-
         self.scoreboard.btn_retrn.clicked.connect(self.return_game)
 
     def return_game(self):
@@ -29,45 +29,57 @@ class ScoreBoard(QMainWindow):
             hezargan = int(self.scoreboard.s4.text()) * 1000
 
             total = yekan + dahgan + sadgan + hezargan + add_num
-            if total == 0 :
+            if total == 0:
                 jam = "0000"
-            if total>0 and total <10:
+            if total > 0 and total < 10:
                 jam = "000" + str(total)
-            if total>=10 and total <100:
+            if total >= 10 and total < 100:
                 jam = "00" + str(total)
-            if total >=100 and total <1000:
+            if total >= 100 and total < 1000:
                 jam = "0" + str(total)
 
             self.scoreboard.s1.setText(jam[3])
             self.scoreboard.s2.setText(jam[2])
             self.scoreboard.s3.setText(jam[1])
             self.scoreboard.s4.setText(jam[0])
-        
-        elif type== "move":
-                yekan_m = int(self.scoreboard.m1.text())
-                dahgan_m = int(self.scoreboard.m2.text()) * 10
-                sadgan_m = int(self.scoreboard.m3.text()) * 100
-                hezargan_m = int(self.scoreboard.m4.text()) * 1000
 
-                total_m = yekan_m + dahgan_m + sadgan_m + hezargan_m + add_num
-                if total_m == 0 :
-                    jam_m = "0000"
-                if total_m>0 and total_m <10:
-                    jam_m = "000" + str(total_m)
-                if total_m>=10 and total_m <100:
-                    jam_m = "00" + str(total_m)
-                if total_m >=100 and total_m <1000:
-                    jam_m = "0" + str(total_m)
+        elif type == "move":
+            yekan_m = int(self.scoreboard.m1.text())
+            dahgan_m = int(self.scoreboard.m2.text()) * 10
+            sadgan_m = int(self.scoreboard.m3.text()) * 100
+            hezargan_m = int(self.scoreboard.m4.text()) * 1000
 
-                self.scoreboard.m1.setText(jam_m[3])
-                self.scoreboard.m2.setText(jam_m[2])
-                self.scoreboard.m3.setText(jam_m[1])
-                self.scoreboard.m4.setText(jam_m[0])
+            total_m = yekan_m + dahgan_m + sadgan_m + hezargan_m + add_num
+            if total_m == 0:
+                jam_m = "0000"
+            if total_m > 0 and total_m < 10:
+                jam_m = "000" + str(total_m)
+            if total_m >= 10 and total_m < 100:
+                jam_m = "00" + str(total_m)
+            if total_m >= 100 and total_m < 1000:
+                jam_m = "0" + str(total_m)
+
+            self.scoreboard.m1.setText(jam_m[3])
+            self.scoreboard.m2.setText(jam_m[2])
+            self.scoreboard.m3.setText(jam_m[1])
+            self.scoreboard.m4.setText(jam_m[0])
+
+    def elapsed(self,value):
+        tabdil = str(datetime.timedelta(seconds=int(value)))
+        tabdil_ = tabdil.split(":")
+        minute = tabdil_[1]
+        seconds = tabdil_[2]
+        self.scoreboard.hh.setText(minute[0])
+        self.scoreboard.h.setText(minute[1])
+
+        self.scoreboard.mm.setText(seconds[0])
+        self.scoreboard.m.setText(seconds[1])
 
 
 class GamePlay(QMainWindow):
     def __init__(self):
         super().__init__()
+        self.start = time.time()
 
         self.ui = Ui_ui_mainwindow()
         self.ui.setupUi(self)
@@ -97,11 +109,14 @@ class GamePlay(QMainWindow):
         self.ui.score.clicked.connect(self.show_score)
 
     def show_score(self):
+        score_board.add(1, "score")
+        self.end = time.time()
+        score_board.elapsed(str(int(self.end - self.start)))
         self.hide()
         score_board.show()
 
     def play(self, i, j):
-        score_board.add(1,"move")
+        score_board.add(1, "move")
         if (i == self.empty_i and abs(j - self.empty_j) == 1) or (
             j == self.empty_j and abs(i - self.empty_i) == 1
         ):
@@ -121,6 +136,7 @@ class GamePlay(QMainWindow):
         for i in range(4):
             for j in range(4):
                 if int(self.buttons[i][j].text()) != index:
+                    index += 1
                     return False
         return True
 
