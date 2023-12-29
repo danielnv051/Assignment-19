@@ -2,6 +2,7 @@
 ---
 ## Puzzle 15
 ![puzzle15](puzzle15/puzzle15.PNG)
+![puzzle15](puzzle15/score.PNG)
 
 ## Password Generator
 ![Password Generator](password_generator/passwordgenerator.PNG)
