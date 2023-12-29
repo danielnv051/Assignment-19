@@ -4,10 +4,10 @@
 ![puzzle15](puzzle15/puzzle15.PNG)
 
 ## Password Generator
-![Password Generator](password_generator/passwordgenerator.png)
+![Password Generator](password_generator/passwordgenerator.PNG)
 
 ## Paper Rock Scissors
-![Paper Rock Scissors](paper_rock_scissors/paper_rock_scissors.png)
+![Paper Rock Scissors](paper_rock_scissors/paper_rock_scissors.PNG)
 
 ## Guess Number
-![Guess Number](guess_number/guess.png)
+![Guess Number](guess_number/guess.PNG)
