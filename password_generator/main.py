@@ -2,7 +2,7 @@ import sys
 import random
 from typing import Optional
 from PySide6.QtWidgets import QApplication, QMainWindow, QWidget, QMessageBox
-from main_ui import Ui_MainWindow
+from converter.main_ui import Ui_MainWindow
 
 
 class PasswordGenerator(QMainWindow):

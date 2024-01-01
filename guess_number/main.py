@@ -1,7 +1,7 @@
 import sys
 import random
 from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox
-from main_ui import Ui_MainWindow
+from converter.main_ui import Ui_MainWindow
 
 
 class GuessWord(QMainWindow):
