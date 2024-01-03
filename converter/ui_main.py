@@ -16,7 +16,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QComboBox, QGroupBox, QLabel,
-    QMainWindow, QPushButton, QSizePolicy, QTextEdit,
+    QLineEdit, QMainWindow, QPushButton, QSizePolicy,
     QWidget)
 
 class Ui_mainWindow(object):
@@ -60,31 +60,29 @@ class Ui_mainWindow(object):
         self.combo_from.setGeometry(QRect(140, 10, 131, 31))
         self.combo_from.setFont(font)
         self.combo_from.setLayoutDirection(Qt.RightToLeft)
-        self.label_2 = QLabel(self.groupBox_2)
-        self.label_2.setObjectName(u"label_2")
-        self.label_2.setGeometry(QRect(280, 15, 21, 21))
-        self.label_2.setFont(font1)
-        self.label_2.setLayoutDirection(Qt.RightToLeft)
-        self.label_3 = QLabel(self.groupBox_2)
-        self.label_3.setObjectName(u"label_3")
-        self.label_3.setGeometry(QRect(280, 55, 21, 21))
-        self.label_3.setFont(font1)
-        self.label_3.setLayoutDirection(Qt.RightToLeft)
         self.combo_to = QComboBox(self.groupBox_2)
         self.combo_to.setObjectName(u"combo_to")
-        self.combo_to.setGeometry(QRect(140, 50, 131, 31))
+        self.combo_to.setGeometry(QRect(140, 70, 131, 31))
         self.combo_to.setFont(font)
         self.combo_to.setLayoutDirection(Qt.RightToLeft)
-        self.text_from = QTextEdit(self.groupBox_2)
-        self.text_from.setObjectName(u"text_from")
-        self.text_from.setGeometry(QRect(13, 10, 121, 31))
-        self.text_to = QTextEdit(self.groupBox_2)
-        self.text_to.setObjectName(u"text_to")
-        self.text_to.setGeometry(QRect(13, 50, 121, 31))
         self.cal = QPushButton(self.groupBox_2)
         self.cal.setObjectName(u"cal")
-        self.cal.setGeometry(QRect(14, 100, 261, 41))
+        self.cal.setGeometry(QRect(14, 110, 261, 41))
         self.cal.setFont(font)
+        self.label_2 = QLabel(self.groupBox_2)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setGeometry(QRect(130, 50, 21, 21))
+        self.label_2.setFont(font1)
+        self.text_from = QLineEdit(self.groupBox_2)
+        self.text_from.setObjectName(u"text_from")
+        self.text_from.setGeometry(QRect(20, 10, 113, 31))
+        self.text_from.setFont(font1)
+        self.text_to = QLineEdit(self.groupBox_2)
+        self.text_to.setObjectName(u"text_to")
+        self.text_to.setEnabled(False)
+        self.text_to.setGeometry(QRect(20, 70, 113, 31))
+        self.text_to.setFont(font1)
+        self.text_to.setReadOnly(True)
         mainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(mainWindow)
@@ -102,8 +100,7 @@ class Ui_mainWindow(object):
 
         self.label.setText(QCoreApplication.translate("mainWindow", u"\u062a\u0628\u062f\u06cc\u0644 :", None))
         self.groupBox_2.setTitle("")
-        self.label_2.setText(QCoreApplication.translate("mainWindow", u"\u0627\u0632 :", None))
-        self.label_3.setText(QCoreApplication.translate("mainWindow", u"\u0628\u0647:", None))
         self.cal.setText(QCoreApplication.translate("mainWindow", u"\u0645\u062d\u0627\u0633\u0628\u0647", None))
+        self.label_2.setText(QCoreApplication.translate("mainWindow", u"=", None))
     # retranslateUi
 
