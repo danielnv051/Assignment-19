@@ -23,7 +23,9 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(250, 455)
+        MainWindow.resize(252, 455)
+        MainWindow.setMinimumSize(QSize(252, 455))
+        MainWindow.setMaximumSize(QSize(252, 455))
         MainWindow.setStyleSheet(u"background-color: rgb(164, 209, 31);")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
@@ -126,7 +128,7 @@ class Ui_MainWindow(object):
     # setupUi
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Rock Paper Scissors Game", None))
         self.rock.setText("")
         self.paper.setText("")
         self.scissors.setText("")
