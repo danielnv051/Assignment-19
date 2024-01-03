@@ -7,7 +7,7 @@
 ![puzzle15](puzzle15/score.PNG)
 
 ## Password Generator
-###A password generator application is a tool that creates strong and secure passwords for users to use for their online accounts. The application uses a combination of letters, numbers, and special characters to generate complex passwords that are difficult for hackers to guess or crack. Users can customize the length and complexity of the passwords generated, and the application can also save and store the passwords for easy access. This type of application is essential for maintaining online security and protecting sensitive information from unauthorized access.
+### A password generator application is a tool that creates strong and secure passwords for users to use for their online accounts. The application uses a combination of letters, numbers, and special characters to generate complex passwords that are difficult for hackers to guess or crack. Users can customize the length and complexity of the passwords generated, and the application can also save and store the passwords for easy access. This type of application is essential for maintaining online security and protecting sensitive information from unauthorized access.
 
 ![Password Generator](password_generator/passwordgenerator.PNG)
 
